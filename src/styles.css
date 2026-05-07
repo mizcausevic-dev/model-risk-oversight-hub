@@ -1,0 +1,262 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", "Inter", sans-serif;
+  background: #121722;
+  color: #f4f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 22%),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 24%),
+    linear-gradient(180deg, #121722 0%, #151b27 55%, #181f2d 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.shell {
+  width: min(1400px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding: 40px 0 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+
+.eyebrow,
+.panelLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #93c5fd;
+  font-size: 0.76rem;
+  margin: 0 0 10px;
+}
+
+.hero h1 {
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.98;
+  margin: 0;
+  max-width: 14ch;
+}
+
+.lede {
+  color: #b1bfd2;
+  font-size: 1.08rem;
+  line-height: 1.76;
+  max-width: 70ch;
+  margin-top: 18px;
+}
+
+.heroPanel,
+.metricCard,
+.panel,
+.spotlightCard {
+  background: rgba(20, 27, 39, 0.9);
+  border: 1px solid #2d3950;
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(9, 12, 18, 0.34);
+}
+
+.heroPanel {
+  padding: 24px;
+}
+
+.heroLabel,
+.tag,
+.spotlightCard span {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.heroLabel {
+  background: rgba(59, 130, 246, 0.14);
+  color: #bfdbfe;
+}
+
+.heroPanel strong {
+  display: block;
+  margin-top: 18px;
+  font-size: 1.45rem;
+}
+
+.heroPanel p {
+  color: #b4c2d6;
+  line-height: 1.74;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.metricCard {
+  padding: 18px 20px;
+}
+
+.metricCard span {
+  display: block;
+  color: #97a8bf;
+  margin-bottom: 10px;
+}
+
+.metricCard strong {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.metricCard p {
+  margin: 0;
+  color: #eef3fb;
+}
+
+.tone-healthy strong { color: #34d399; }
+.tone-watch strong { color: #f59e0b; }
+.tone-critical strong { color: #ef4444; }
+
+.panelGrid {
+  display: grid;
+  grid-template-columns: 1.45fr 0.95fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panelHeader h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.tag {
+  color: #c4b5fd;
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.spotlightStack {
+  display: grid;
+  gap: 14px;
+}
+
+.spotlightCard {
+  padding: 18px;
+}
+
+.spotlightCard span {
+  color: #e0e7ff;
+  background: rgba(59, 130, 246, 0.14);
+}
+
+.spotlightCard strong {
+  display: block;
+  margin: 12px 0 8px;
+  font-size: 1.02rem;
+}
+
+.spotlightCard p {
+  margin: 0;
+  color: #b6c2d5;
+  line-height: 1.72;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 14px 10px;
+  border-bottom: 1px solid #29344a;
+}
+
+th {
+  color: #98a7bc;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+}
+
+td {
+  color: #f4f7fb;
+}
+
+.legendList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legendList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #29344a;
+}
+
+.legendList li:first-child {
+  border-top: 0;
+}
+
+@media (max-width: 1100px) {
+  .hero,
+  .panelGrid,
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(100vw - 24px, 1400px);
+    padding-top: 24px;
+  }
+
+  .hero h1 {
+    font-size: 2.45rem;
+  }
+
+  .panel,
+  .heroPanel,
+  .metricCard,
+  .spotlightCard {
+    border-radius: 18px;
+  }
+}
